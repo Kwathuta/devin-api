@@ -3,7 +3,7 @@ class UserModels:
     Class for the user operations
     """
 
-    users = {}
+    users = []
 
     def __init__(self, username, email, password, confirm_password):
         """
@@ -26,4 +26,4 @@ class UserModels:
             password=self.password,
             confirm_password=self.confirm_password,
         )
-        self.users.update({self.id: user_record})
+        self.users.append(user_record)

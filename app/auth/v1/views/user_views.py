@@ -32,3 +32,18 @@ class User(Resource):
             "message": "User registered successfully",
             "user": newUser.__dict__,
         }, 201
+
+    def get(self):
+
+        return {
+            "user": UserModels.users,
+        }
+
+
+class UserSearch(Resource):
+    def get(self, id):
+        user_id = int(id) - 1
+
+        return {
+            "user": UserModels.users[user_id],
+        }
